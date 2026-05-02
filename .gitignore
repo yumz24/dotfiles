@@ -1,0 +1,7 @@
+# キャッシュ
+**/.cache/
+**/*.log
+
+# OSゴミ
+.DS_Store
+Thumbs.db
