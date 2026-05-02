@@ -103,3 +103,16 @@ sudo apt install nodejs npm
 
 docker engine
 https://qiita.com/nujust/items/d7cd395baa0c5dc94fc5#docker-engine%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB
+
+
+docker desktopを認証情報取得するために呼ぼうとしてしまう。
+❯ docker compose up -d [+] up 0/1 ⠋ Image postgres:15 Pulling 0.0s error getting credentials - err: exec: "docker-credential-desktop.exe": executable file not found in $PATH, out: `
+
+なので、以下を実施
+cat ~/.docker/config.json
+{
+  "credsStore": "desktop"
+}
+
+config.jsonがある場合は削除
+rm ~/.docker/config.json
